@@ -29,7 +29,7 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_home);
-        TextView usuario = findViewById(R.id.Txt_usu_bienvenida);
+        //TextView usuario = findViewById(R.id.Txt_usu_bienvenida);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -37,7 +37,7 @@ public class Home extends AppCompatActivity {
         });
         Bundle usuario_pasado = getIntent().getExtras();
         usuario_Bienve = usuario_pasado.getString("Usuario");
-        usuario.setText(usuario_Bienve);
+        //usuario.setText(usuario_Bienve);
         cargarSpiner();
         listartareas();
 
@@ -97,8 +97,11 @@ public class Home extends AppCompatActivity {
             tareas_cursor.close();
         }
         ListView lista = findViewById(R.id.lt_tareas);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_single_choice,tareas);
+        lista.setDivider(null);
+        lista.setDividerHeight(15);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.item_tarea_simple,tareas);
         lista.setAdapter(adapter);
+        lista.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         int cot= 0;
         for(int x  = 0;x<lista.getCount();x++){
             if(Marcado.get(x)==1){
@@ -168,5 +171,4 @@ public class Home extends AppCompatActivity {
         Adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(Adaptador);
     }
-    public void ir
 }

@@ -5,52 +5,193 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DDD7DE"
+    android:background="#D7CBD5"
     tools:context=".Home">
 
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="155dp"
-        android:layout_height="133dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="32dp"
-        android:background="#D7A9EF"
-        android:textCursorDrawable="@color/design_default_color_error"
+    <ListView
+        android:id="@+id/lt_tareas"
+        android:layout_width="338dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="155dp"
-        android:layout_height="133dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="96dp"
-        android:background="#D7A9EF"
-        app:circularflow_radiusInDP="300sp"
+        app:layout_constraintHorizontal_bias="0.093"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/Spinner_cat">
+
+
+    </ListView>
 
     <TextView
-        android:id="@+id/Txt_completados"
-        android:layout_width="85dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="112dp"
-        android:layout_marginEnd="64dp"
-        android:text="completados"
-        android:textAlignment="center"
-        android:textSize="50sp"
-        android:textStyle="bold"
+        android:id="@+id/textView23"
+        android:layout_width="418dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="20dp"
+        android:background="#6750A4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lt_tareas" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="36sp"
+        android:layout_height="35sp"
+        android:layout_marginStart="208dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/textView23"
+        app:layout_constraintTop_toTopOf="@+id/textView23"
+        app:srcCompat="@drawable/image" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="36sp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="56dp"
+        android:onClick="listartareas"
+        app:layout_constraintEnd_toStartOf="@+id/imageView8"
+        app:layout_constraintTop_toTopOf="@+id/textView23"
+        app:srcCompat="@drawable/image__2_" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="4dp"
+        android:text="Borrar"
+        android:textAlignment="center"
+        android:textColor="#F8F6F6"
+        app:layout_constraintStart_toStartOf="@+id/textView23"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="4dp"
+        android:text="Nueva tarea"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+    <TextView
+        android:id="@+id/Filtrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="4dp"
+        android:text="Filtrar"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/textView28"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="4dp"
+        android:text="Volver"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/textView27"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="36dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="20dp"
+        android:onClick="salir"
+        app:layout_constraintStart_toEndOf="@+id/imageView8"
+        app:layout_constraintTop_toTopOf="@+id/textView23"
+        app:srcCompat="@drawable/image__1_" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="36dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="25dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView6"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView23"
+        app:srcCompat="@drawable/image__3_" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="6dp"
+        android:text="Borrar"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Filtrar"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/Spinner_cat"
+        android:layout_width="202dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="28dp"
+        android:background="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/textView22"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="165dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:text="Categorias de filtrado"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ho" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="100dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gemini_generated_image_rqxcbxrqxcbxrqxc_removebg_preview" />
+
+    <TextView
+        android:id="@+id/ho"
+        android:layout_width="167dp"
+        android:layout_height="131dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/contenedor_morado"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/Txt_restantes"
         android:layout_width="85dp"
         android:layout_height="70dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="112dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="108dp"
         android:text="restantes"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,132 +201,64 @@
         android:id="@+id/textView16"
         android:layout_width="124dp"
         android:layout_height="27dp"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="36dp"
         android:layout_marginTop="20dp"
         android:text="Tareas restantes"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Txt_restantes" />
 
     <TextView
+        android:id="@+id/textView13"
+        android:layout_width="161dp"
+        android:layout_height="131dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/contenedor_secun"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginEnd="32dp"
         android:text="Tareas completadas"
+        android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Txt_completados" />
 
-    <ListView
-        android:id="@+id/lt_tareas"
-        android:layout_width="364dp"
-        android:layout_height="255dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13">
-
-
-    </ListView>
-
-    <Button
-        android:id="@+id/bt_nuevaTarea"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="32dp"
-        android:onClick="nueva_Tarea"
-        android:text="Nueva Tarea"
+    <TextView
+        android:id="@+id/Txt_completados"
+        android:layout_width="85dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="56dp"
+        android:text="completados"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="49dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/moe" />
 
     <TextView
         android:id="@+id/textView10"
-        android:layout_width="79dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:text="Bienvenido"
+        android:layout_width="200dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:text="Fast Task"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/Txt_usu_bienvenida"
-        android:layout_width="100dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="4dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
-
-    <Spinner
-        android:id="@+id/Spinner_cat"
-        android:layout_width="314dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="52dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
-
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="158dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="16dp"
-        android:text="Categorias de filtardo"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="64dp"
-        android:onClick="listartareas"
-        android:text="Filtrar por Categoria"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lt_tareas" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="183dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="320dp"
-        android:layout_marginEnd="16dp"
-        android:onClick="salir"
-        android:text="Salir"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/lt_tareas" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="165dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="124dp"
-        android:layout_marginBottom="10dp"
-        android:text="Eliminar"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
