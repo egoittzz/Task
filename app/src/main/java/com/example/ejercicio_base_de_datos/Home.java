@@ -5,6 +5,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -28,6 +30,9 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_home);
         //TextView usuario = findViewById(R.id.Txt_usu_bienvenida);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -113,7 +118,7 @@ public class Home extends AppCompatActivity {
         completadas.setText(""+cot+"");
         int total = tareas.size()-cot;
         restantes.setText(""+total+"");
-        //ECHO CON IA LA CABECERA DEL METODO
+        //HECHO CON IA LA CABECERA DEL METODO
         lista.setOnItemClickListener((parent, view, position, id) -> {
             int estaMarcado = -1;
             String textoTarea = tareas.get(position);
@@ -170,5 +175,10 @@ public class Home extends AppCompatActivity {
         ArrayAdapter <String> Adaptador = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,todasCat);
         Adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(Adaptador);
+    }
+    public void borrar (View v){
+        Intent borrar = new Intent(this, Borrar.class);
+        borrar.putExtra("Usuario",usuario_Bienve);
+        startActivity(borrar);
     }
 }

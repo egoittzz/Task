@@ -5,49 +5,28 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EDE7E7"
+    android:background="#D7CBD5"
     tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/Tx_nombre_app"
-        android:layout_width="338dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="4dp"
-        android:fontFamily="@font/alumni_sans_inline_one"
-        android:text="Gestor de Tareas"
-        android:textAlignment="center"
-        android:textSize="50sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginTop="283dp"
+        android:layout_marginEnd="90dp"
         android:text="Gestiona tus tareas de forma simple"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Tx_nombre_app" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="135dp"
-        android:layout_height="120dp"
-        android:layout_marginStart="130dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="146dp"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/Tx_nombre_app"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="145dp"
+        android:layout_height="131dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="64dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/moe" />
+        app:srcCompat="@drawable/gemini_generated_image_cbpdtocbpdtocbpd_removebg_preview" />
 
     <TextView
         android:id="@+id/textView"
@@ -66,7 +45,7 @@
         android:id="@+id/et_usu"
         android:layout_width="297dp"
         android:layout_height="57dp"
-        android:layout_marginStart="56dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="28dp"
         android:background="@android:drawable/editbox_background_normal"
@@ -82,8 +61,8 @@
         android:id="@+id/et_con"
         android:layout_width="297dp"
         android:layout_height="57dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="48dp"
         android:background="@android:drawable/editbox_background_normal"
         android:ems="10"
         android:hint="Contraseña"
@@ -91,12 +70,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_usu" />
 
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="134dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="16dp"
+        android:onClick="registrarse"
+        android:text="Registrate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Tx_pregunta" />
+
     <Button
         android:id="@+id/button"
         android:layout_width="175dp"
         android:layout_height="56dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="20dp"
         android:onClick="iniciar_sesion"
         android:text="Iniciar Sesion"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,7 +96,7 @@
         android:id="@+id/Tx_pregunta"
         android:layout_width="154dp"
         android:layout_height="29dp"
-        android:layout_marginStart="116dp"
+        android:layout_marginStart="108dp"
         android:layout_marginTop="11dp"
         android:layout_marginBottom="7dp"
         android:text="¿ No tienes cuenta ?"
@@ -115,15 +105,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="134dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="4dp"
-        android:onClick="registrarse"
-        android:text="Registrate"
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="388dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/et_usu"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Tx_pregunta" />
+        app:srcCompat="@drawable/image_removebg_preview__1_" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

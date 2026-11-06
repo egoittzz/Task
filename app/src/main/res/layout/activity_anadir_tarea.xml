@@ -5,26 +5,27 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#D7CBD5"
     tools:context=".Anadir_tarea">
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="355dp"
         android:layout_height="86dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="4dp"
         android:text="Añadir Tarea"
+        android:textAlignment="center"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
     <EditText
         android:id="@+id/Et_fecha"
         android:layout_width="353dp"
         android:layout_height="63dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
         android:background="@android:drawable/editbox_background_normal"
         android:ems="10"
         android:hint="Ej: 29/10/2026"
@@ -36,32 +37,31 @@
         android:id="@+id/textView12"
         android:layout_width="64dp"
         android:layout_height="34dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="102dp"
+        android:layout_marginStart="16dp"
         android:text="Tarea"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <EditText
         android:id="@+id/Et_tarea"
         android:layout_width="355dp"
         android:layout_height="59dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
         android:background="@android:drawable/editbox_background_normal"
         android:ems="10"
         android:hint="Ej: Examen Matematicas"
         android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
         android:text="Categoria"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,54 +71,127 @@
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="77dp"
         android:text="Fecha"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintStart_toStartOf="@+id/Et_fecha"
+        app:layout_constraintTop_toTopOf="@+id/spinner" />
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="359dp"
         android:layout_height="57dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
-    <Button
-        android:id="@+id/bt_enviar"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="49dp"
-        android:onClick="añadir_Tarea"
-        android:text="Añadir Tarea"
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="403dp"
+        android:layout_height="97dp"
+        android:layout_marginTop="122dp"
+        android:background="#6750A4"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Et_fecha" />
 
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="47dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:onClick="volver"
+        app:layout_constraintStart_toStartOf="@+id/textView33"
+        app:layout_constraintTop_toTopOf="@+id/textView32"
+        app:srcCompat="@drawable/image__1_" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="52dp"
+        android:text="Volver Atras"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/textView32"
+        app:layout_constraintTop_toTopOf="@+id/imageView11" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="47dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="196dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="añadir_Tarea"
+        app:layout_constraintBottom_toTopOf="@+id/textView34"
+        app:layout_constraintStart_toStartOf="@+id/textView32"
+        app:srcCompat="@drawable/image" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="47dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:onClick="CrearCat"
+        app:layout_constraintEnd_toEndOf="@+id/textView35"
+        app:layout_constraintTop_toTopOf="@+id/textView32"
+        app:srcCompat="@drawable/image__4_" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="64dp"
+        android:text="Añadir tarea"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/textView33"
+        app:layout_constraintTop_toTopOf="@+id/textView32" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="288dp"
+        android:layout_marginTop="52dp"
+        android:text="Añadir Categoria"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/textView32"
+        app:layout_constraintTop_toTopOf="@+id/imageView13" />
+
     <TextView
         android:id="@+id/textView19"
-        android:layout_width="201dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="120dp"
-        android:onClick="CrearCat"
-        android:text="Necesito una nueva Categoria"
-        android:textAlignment="center"
-        android:textSize="15sp"
+        android:layout_width="409dp"
+        android:layout_height="137dp"
+        android:layout_marginTop="-1dp"
+        android:background="#6750A4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
+        app:layout_constraintHorizontal_bias="0.312"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="49dp"
-        android:onClick="volver"
-        android:text="Volver a las  tareas"
-        app:layout_constraintStart_toEndOf="@+id/bt_enviar"
-        app:layout_constraintTop_toBottomOf="@+id/Et_fecha" />
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="97dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gemini_generated_image_rqxcbxrqxcbxrqxc_removebg_preview" />
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="345dp"
+        android:layout_height="235dp"
+        android:layout_marginEnd="-15dp"
+        android:layout_marginBottom="39dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.447"
+        app:srcCompat="@drawable/image_removebg_preview__1_" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
